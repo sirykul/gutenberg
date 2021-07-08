@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Breaking Changes
+
+-   The peer `jest` dependency has been updated from requiring `>=26` to requiring `>=27` (see [Breaking Changes](https://jestjs.io/blog/2021/05/25/jest-27), [#33287](https://github.com/WordPress/gutenberg/pull/33287)).
+
 ### Bug Fix
 
 -   Improve support for test files with `.jsx` and `.tsx` extensions ([#36260](https://github.com/WordPress/gutenberg/pull/36260)).
