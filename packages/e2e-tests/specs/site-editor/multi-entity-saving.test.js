@@ -25,7 +25,7 @@ describe( 'Multi-entity save flow', () => {
 	const activatedTemplatePartSelector = `${ templatePartSelector }.block-editor-block-list__layout`;
 	const savePanelSelector = '.entities-saved-states__panel';
 	const closePanelButtonSelector =
-		'.editor-post-publish-panel__header-cancel-button button';
+		'.editor-post-publish-panel__header-cancel-button button:not(:disabled)';
 	const createNewButtonSelector =
 		'//button[contains(text(), "New template part")]';
 
@@ -145,7 +145,10 @@ describe( 'Multi-entity save flow', () => {
 			await assertExistance( savePanelSelector, false );
 
 			// Close publish panel.
-			await page.click( closePanelButtonSelector );
+			const closePanelButton = await page.waitForSelector(
+				closePanelButtonSelector
+			);
+			await closePanelButton.click();
 
 			// Verify saving is disabled.
 			const draftSaved = await page.waitForSelector( draftSavedSelector );
