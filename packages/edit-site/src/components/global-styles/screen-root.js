@@ -14,7 +14,7 @@ import { __ } from '@wordpress/i18n';
  * Internal dependencies
  */
 import StylesPreview from './preview';
-import NavigationButton from './navigation-button';
+import { NavigationButton } from './navigation-button';
 import ContextMenu from './context-menu';
 
 function ScreenRoot() {

@@ -17,7 +17,6 @@ import {
 } from './hooks';
 
 function ScreenBackgroundColor( { name } ) {
-	const parentMenu = name === undefined ? '' : '/blocks/' + name;
 	const supports = getSupportedGlobalStylesPanels( name );
 	const [ solids ] = useSetting( 'color.palette', name );
 	const [ gradients ] = useSetting( 'color.gradients', name );
@@ -88,7 +87,6 @@ function ScreenBackgroundColor( { name } ) {
 	return (
 		<>
 			<ScreenHeader
-				back={ parentMenu + '/colors' }
 				title={ __( 'Background' ) }
 				description={ __(
 					'Set a background color or gradient for the whole site.'
