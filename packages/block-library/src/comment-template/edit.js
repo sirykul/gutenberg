@@ -114,7 +114,7 @@ const CommentsList = ( {
 
 export default function CommentTemplateEdit( {
 	clientId,
-	context: { postId, queryPerPage },
+	context: { postId, queryPerPage, queryOrder },
 } ) {
 	const blockProps = useBlockProps();
 
@@ -129,13 +129,13 @@ export default function CommentTemplateEdit( {
 				rawComments: getEntityRecords( 'root', 'comment', {
 					post: postId,
 					status: 'approve',
-					order: 'asc',
+					order: queryOrder,
 					context: 'embed',
 				} ),
 				blocks: getBlocks( clientId ),
 			};
 		},
-		[ postId, clientId ]
+		[ postId, clientId, queryOrder ]
 	);
 
 	// We convert the flat list of comments to tree.

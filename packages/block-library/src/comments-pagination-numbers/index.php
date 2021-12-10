@@ -20,6 +20,8 @@ function render_block_core_comments_pagination_numbers( $attributes, $content, $
 		? $block->context['postId']
 		: get_the_id();
 
+	$order = ! empty( $block->context['queryOrder'] ) ? $block->context['queryOrder'] : get_option( 'comment_order' );
+
 	if ( ! $post_id ) {
 		return '';
 	}
@@ -30,7 +32,12 @@ function render_block_core_comments_pagination_numbers( $attributes, $content, $
 		: get_option( 'comments_per_page' );
 
 	// Get the total number of pages.
-	$comments = get_approved_comments( $post_id );
+	$comments = get_approved_comments(
+		$post_id,
+		array(
+			'order' => $order,
+		)
+	);
 	$total    = get_comment_pages_count( $comments, $per_page );
 
 	// Get the number of the default page.

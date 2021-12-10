@@ -55,6 +55,7 @@ function block_core_comment_template_render_comments( $comments, $block ) {
 function render_block_core_comment_template( $attributes, $content, $block ) {
 
 	$post_id = $block->context['postId'];
+	$order   = ! empty( $block->context['queryOrder'] ) ? $block->context['queryOrder'] : get_option( 'comment_order' );
 
 	// Bail out early if the post ID is not set for some reason.
 	if ( ! isset( $post_id ) ) {
@@ -69,6 +70,7 @@ function render_block_core_comment_template( $attributes, $content, $block ) {
 		array(
 			'number'       => $number,
 			'hierarchical' => 'threaded',
+			'order'        => $order,
 		)
 	);
 

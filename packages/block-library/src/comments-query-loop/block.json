@@ -17,11 +17,16 @@
 		"tagName": {
 			"type": "string",
 			"default": "div"
+		},
+		"queryOrder": {
+			"type": "string",
+			"default": "desc"
 		}
 	},
 	"providesContext": {
 		"queryId": "queryId",
-		"queryPerPage": "queryPerPage"
+		"queryPerPage": "queryPerPage",
+		"queryOrder": "queryOrder"
 	},
 	"supports": {
 		"align": [ "wide", "full" ],
