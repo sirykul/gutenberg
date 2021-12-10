@@ -21,6 +21,7 @@
 -   Replaced hardcoded blue in `ColorPicker` with UI theme color ([#36153](https://github.com/WordPress/gutenberg/pull/36153)).
 -   Fixed empty `ToolsPanel` height by correcting menu button line-height ([#36895](https://github.com/WordPress/gutenberg/pull/36895)).
 -   Normalized label line-height and spacing within the `ToolsPanel` ([36387](https://github.com/WordPress/gutenberg/pull/36387))
+-   Allowed `ToolsPanel` to register items when `panelId` is `null` due to multiple block selection ([37216](https://github.com/WordPress/gutenberg/pull/37216)).
 
 ### Enhancements
 
